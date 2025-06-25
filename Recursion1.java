@@ -75,9 +75,9 @@ public class Recursion1 {
 
         if (n % 2 == 0) {
             return calcPow(x, n / 2) * calcPow(x, n / 2);
-        } else {
+        } else 
+        {
             return calcPow(x, n / 2) * calcPow(x, n / 2) * x;
-
         }
     }
 
