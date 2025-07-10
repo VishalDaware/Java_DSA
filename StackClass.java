@@ -78,6 +78,27 @@ public class StackClass {
 
     // }
 
+    // Q. push 4 at the bottom of stack
+    public static void pushBottom(int data, Stack<Integer> s) {
+        if (s.isEmpty()) {
+            s.push(data);
+            return;
+        }
+        int top = s.pop();
+        pushBottom(data, s);
+        s.push(top);
+    }
+
+    // reverse stack
+    public static void reverse(Stack<Integer> s) {
+        if (s.isEmpty()) {
+            return;
+        }
+        int top = s.pop();
+        reverse(s);
+        pushBottom(top, s);
+    }
+
     public static void main(String[] args) {
 
         // Stack s = new Stack(); //without java collection framework
@@ -87,7 +108,8 @@ public class StackClass {
         s.push(1);
         s.push(2);
         s.push(3);
-        s.push(4);
+        // pushBottom(4, s);
+        reverse(s);
 
         while (!s.isEmpty()) {
             System.out.println(s.peek());
